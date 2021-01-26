@@ -1,0 +1,887 @@
+/**/
+html {
+    height: 100%;
+    font-family: "Open Sans",BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    font-size: 15px;
+}
+
+div {
+    border-radius: 5px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;    
+    border-radius: unset;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    width: 80%;
+    margin: 0 auto;	
+    background: url(../img/background_black.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #eae7e4;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+header {
+    margin: 10px 0;
+}
+
+hr {
+    margin: unset;
+    border: none;
+    color: #929292;
+    background-color: #929292;
+    height: 1px;
+}
+
+footer {
+    border: 2px solid #da1e1e;
+    height: 30px;
+    background: #383838;
+    border-radius: 5px;
+}
+
+a {
+    color: #eae7e4;
+    text-decoration: none;
+}
+
+a[class="a-thread"] {
+    text-decoration: underline!important;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+nav {
+    border: 2px solid #da1e1e; 
+    background: #383838; 
+    margin-bottom: 10px; 
+    border-radius: 5px!important;
+}
+
+nav[class="mobile"] {
+    display: none;
+}
+
+nav[class="mobile"] > label > #burger {
+    width: 40px; 
+    height: 40px; 
+    background: url(/img/menu.png);
+    pointer-events: all;
+}
+
+#mobile_menu {
+    position: absolute;
+    width: calc(80% - 30px);;
+    height: 100%;
+    top: 0;
+    left: -80%;
+    transition: 1s;
+    background: #383838;
+    border-radius: 0;
+    padding: 15px;
+}
+
+#mobile_menu_header {
+    font-size: 20px;
+}
+
+.mobile_menu_button {
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+nav[class="mobile"] > input[type=checkbox]:checked ~ #mobile_menu {
+    transition: 1s;
+    left: 0px;
+}
+
+
+.button {
+    border: 1px solid #929292; 
+    padding: 5px 10px; 
+    cursor: pointer;
+    background: #383838;	
+    width: max-content;
+    border-radius: 5px;
+
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+.menu_button {
+    padding: 10px 20px; 
+    cursor: pointer;
+    background: #383838;	
+    width: max-content;
+
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+.button:hover, .menu_button:hover {
+    background: #4c4c4c;
+    text-decoration: none;
+}
+
+.button:active, .menu_button:active {
+    background: #313131;
+}
+
+i {
+    cursor: pointer;
+}
+
+select {
+    width: 212px!important;
+}
+
+option {
+    background: #383838;
+    border: 0px;
+}
+
+/*header*/
+header > #logo {
+    width: 75%;
+    margin-right: 10px;
+    font-size: 110px;
+}
+
+header > #info {
+    border: 2px solid #da1e1e;
+    width: calc(25% - 20px);
+    padding: 10px;
+    background: #383838;
+}
+
+header > #info > #username {
+    margin-bottom: 10px;
+}
+
+header > #info > .enter,
+#mobile_menu > .enter {
+    padding: 5px;
+    border: 1px solid #929292;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font: inherit;
+    background: #383838;
+    width: 200px;
+    color: inherit;
+    width: calc(100% - 12px);
+}
+
+header > #info > .enter:focus,
+#mobile_menu > .enter:focus {
+    outline: none;
+}
+
+header > #info > #user_information {
+    margin-bottom: 10px;
+}
+
+header > #info > #user_information > #avatar {
+    width: 100px;
+    /*height: 100px;*/
+    margin-right: 10px;    
+}
+
+header > #info > #user_information > #avatar > img {
+    width: 100px;
+    /*height: 100px;*/
+    border-radius: 5px;
+    border: 1px solid #929292;
+}
+
+header > #info > #user_information > #statistic {
+    width: calc(100% - 114px);
+}
+
+.parameter {
+    width: 120px;
+}
+
+/*nav*/
+
+/*main*/
+/*breadcrumbs*/
+.breadcrumbs {	
+    border: 2px solid #da1e1e;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 34px;
+    background: #383838;
+}
+
+.breadcrumbs-bottom {
+    margin-top: auto;
+}
+
+.breadcrumbs > .row {
+    height: 100%;
+}
+
+.breadcrumbs_button {	
+    width: max-content;
+    cursor: pointer;
+    position: relative;
+    padding: 7px 6px 0px 15px;
+    z-index: 1;
+    white-space: nowrap;
+    word-wrap: normal;
+    font-size: 14px;
+
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;       
+}
+
+.breadcrumbs_button:hover {
+    text-decoration: none!important;
+}
+
+.breadcrumbs_button::before, .breadcrumbs_button::after {
+    content: '';
+    border-style: solid white;
+    border-width: 0;
+    border-right-width: 1px;
+    border-color: rgba(58,63,74,0.8);
+    color: rgba(255,255,255,0.38);
+    box-shadow: inset currentColor -1px 0px 0px 0px;
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    right: -4px;
+    z-index: -1;
+    box-sizing: border-box;
+    transform-origin: 100% 50%;
+
+}
+
+.breadcrumbs_button::before {
+    top: 0;
+    transform: skewX(30deg);
+}
+
+.breadcrumbs_button:first-child::before {
+    border-radius: 2px 0 0 0;
+}
+
+.breadcrumbs_button::after {
+    top: 50%;
+    transform: skewX(-30deg);
+}
+
+.breadcrumbs_button:first-child::after {
+    border-radius: 0 0 0 2px;
+}
+
+.breadcrumbs_button:hover::before, .breadcrumbs_button:hover::after {
+    background: #4c4c4c;
+    text-decoration: none!important;
+}
+
+.breadcrumbs_button:active::before, .breadcrumbs_button:active::after {
+    background: #313131!important;
+}
+
+.breadcrumbs_button:first-child:hover {
+    background: #4c4c4c;
+    text-decoration: none!important;
+}
+
+.breadcrumbs_button:first-child:active {
+    background: #313131!important;
+}
+
+/*right sidebar*/
+#right_sidebar {
+    width: 25%;
+}
+
+.block {
+    margin-bottom: 10px;
+}
+
+.block_body {
+    border: 2px solid #da1e1e;
+    background: #383838;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.block > .block_title {
+    margin-bottom: 4px;
+}
+
+.block > .block_body > .forum_statistic > .value {
+    white-space: nowrap;
+}
+
+.block > .block_body > .forum_statistic > .parameter {
+    width: 100%;
+}
+
+.block > .block_body > .last_threads > .avatar_mini {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #929292;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.block > .block_body > .last_threads > .avatar_mini > img {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;
+}
+
+.block > .block_body > .last_threads > .last_threads_info {
+
+}
+
+.block_divider {
+    margin: 10px -10px;
+    background-color: gray;
+    background: gray;
+}
+
+/*forum*/
+#forum {
+    width: 75%; 
+    margin-right: 10px;
+}
+
+.category,
+.section,
+.section_child {
+    border: 2px solid #da1e1e;
+    margin-bottom: 10px;
+    background: #383838;
+}
+
+.category_title,
+.section_child_title {
+    padding: 20px;
+    border-radius: unset;
+    font-size: 19px;
+    background: #272626;
+}
+
+.section_child_title {
+    background: #383838;
+}
+
+.category_title {
+    border-bottom: 2px solid #da1e1e; 
+}
+
+.section_child_title {
+    border-top: 2px solid #da1e1e; 
+}
+
+.category_title > .category_description,
+.section_child_title > .section_child_description {
+    font-size: 13px;
+}
+
+.category_body,
+.section_body {
+    padding: 0px 5px;
+    background: #383838;
+}
+
+.category_body:hover,
+.section_body:hover {
+    background: #4c4c4c;
+}
+
+.category_body_img {
+    /*margin: 20px 15px;*/
+    margin: auto 15px;
+    font-size: 20px;
+}
+
+.category_body_name {
+    padding: 22px 0; 
+    width: 60%;
+    margin: auto;
+}
+
+.category_body_info {
+    width: 40%;
+    margin: auto;
+}
+
+.category_body_info > .threads {
+    width: 20%; 
+    text-align: center; 
+    /*padding-top: 12px;*/
+    margin: auto;
+}
+
+.category_body_info > .answers {
+    width: 20%; 
+    text-align: center; 
+    /*padding-top: 12px;*/
+    margin: auto;
+}
+
+.category_body_info > .last {
+    width: 60%; 
+    /*padding: 13px 0 0 10px;*/
+    padding: 1px 0 0 10px;
+    margin: auto;
+}
+
+.category_body_info > .threads > .threads_count, .category_body_info > .answers > .answers_count {
+    font-size: 18px;
+}
+
+.category_body_info > .threads > .threads_text, .category_body_info > .answers > .answers_text {
+    font-size: 11px;
+}
+
+.category_body_info > .last > .last_name {
+    font-weight: 600;
+}
+
+.category_body_info > .last > .last_info {
+    font-size: 14px;
+}
+
+/*thread.php*/
+#thread > #thread_header,
+#category > #category_header,
+#section > #section_header {
+    background: #383838;
+    border: 2px solid #da1e1e;
+    border-top: 6px solid #da1e1e;
+    margin-bottom: 10px;
+    padding: 20px 15px;
+}
+
+#thread > #thread_moder {
+    float: right;
+    margin-bottom: 10px;
+    border: 2px solid #da1e1e;
+    background: #383838;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+#section > #category_notice,
+#category > #category_notice {
+    border: 2px solid #da1e1e;
+    background: #383838;
+    padding: 10px;
+    margin: 0px 0px 10px 0px;
+}
+
+#thread > #thread_header > #title,
+#category > #category_header > #title,
+#section > #section_header > #title {
+    font-size: 24px;
+}
+
+#thread > #thread_header > #info {
+    font-size: 14px;
+}
+
+.fa-user::before, .fa-clock-o::before {
+    padding-right: 5px;
+}
+
+#thread > #thread_header > #info > #author {
+    margin-right: 10px;
+}
+
+#thread > #thread_header > #info > #date {}
+
+#thread > .thread_content {
+    width: 100%;
+}
+
+#thread > .thread_content > .user, .thread_content > .answer {
+    background: #383838;
+    border: 2px solid #da1e1e;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#thread > .thread_content > .user,
+#thread > #write_answer > #user {
+    width: 150px;
+    margin-right: 10px;
+}
+
+#thread > .thread_content > .user > .avatar,
+#thread > #write_answer > #user > #avatar {
+    width: 125px;
+    /*height: 125px;*/
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#thread > .thread_content > .user > .avatar > img,
+#thread > #write_answer > #user > #avatar > img {
+    width: 125px;
+    /*height: 125px;*/
+    border-radius: 5px;
+    border: 1px solid #929292;
+}
+
+#thread > .thread_content > .user > .name {	
+    margin: 0 auto;
+    width: max-content;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+#thread > .thread_content > .user > .rank {
+    margin: 0 auto;
+    width: max-content;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+#thread > .thread_content > .user > .banner {
+    margin: 0 auto;
+    border: 1px solid;
+    padding: 5px 20px;
+    font-size: 11px;
+    width: calc(100% - 45px);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#thread > .thread_content > .user > .banner[type="1"] {
+    background: #a21313;
+    border: 1px solid red;
+    color: white;
+}
+
+#thread > .thread_content > .user > .class {
+    margin: 0 auto;
+    width: max-content;
+}
+
+#thread > .thread_content > .answer {
+    width: calc(100% - 170px);
+}
+
+#thread > .thread_content > .answer > .info {
+    font-size: 13px;
+    color: #929292;
+    margin-bottom: 15px;
+}
+
+#thread > .thread_content > .answer > .info > .date {
+    width: 100%;
+}
+
+#thread > .thread_content > .answer > .text {
+    margin-bottom: 5px;
+}
+
+#thread > .thread_content > .answer > .buttons {
+    margin-top: auto;
+    width: 100%;
+}
+
+#thread > .thread_content > .answer > .buttons > .button,
+#thread > #write_answer > #answer > #buttons > .button, 
+#new_thread > #body > #answer > #buttons > .button, 
+.thread_content > .answer > #answer > #buttons > .button {
+    float: right;
+}
+
+#thread > .thread_content > .answer > .buttons > .button:first-child, 
+#thread > .thread_content > .answer > .buttons > .button:nth-child(2),
+.thread_content > .answer > #answer > #buttons > .button:first-child, 
+.thread_content > .answer > #answer > #buttons > .button:nth-child(2) {
+    margin-left: 10px;
+}
+
+#thread > #write_answer,
+#new_thread {
+    background: #383838;
+    border: 2px solid #da1e1e;
+    border-top: 6px solid #da1e1e;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#thread > #write_answer > #answer {
+    width: calc(100% - 160px);
+}
+
+#thread > #write_answer > #answer > #border,
+#new_thread > #body > #answer > #border,
+.thread_content > .answer > #answer > #border {
+    border: 1px solid #929292;	
+    margin-bottom: 10px;
+}
+
+#thread > #write_answer > #answer > #border > #tools,
+#new_thread > #body > #answer > #border > #tools,
+.thread_content > .answer > #answer > #border > #tools {
+    padding: 10px;
+}
+
+#thread > #write_answer > #answer > #border > hr,
+#new_thread > #body > #answer > #border > hr, 
+.thread_content > .answer > #answer > #border > hr {
+    color: #929292;
+    background-color: #929292;
+}
+
+#thread > #write_answer > #answer > #border > #text,
+#new_thread > #body > #answer > #border > #text, 
+.thread_content > .answer > #answer > #border > #text {
+    min-height: 200px;
+    padding: 10px;
+}
+
+#thread > #write_answer > #answer > #border > #text:focus, 
+#new_thread > #body > #answer > #border > #text:focus,
+.thread_content > .answer > #answer > #border > #text:focus {
+    outline: none;
+}
+
+.hidden {
+    opacity: 0.86;
+}
+
+/*section.php*/
+.section {
+    padding: 10px 10px;
+    background: #383838;
+}
+
+.section_body {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.section > .section_body > .avatar {
+    width: 35px; 
+    height: 35px; 
+    border: 1px solid #929292; 
+    margin-right: 10px;
+}
+
+.section > .section_body > .avatar > img {
+    width: 35px; 
+    height: 35px; 
+    border-radius: 5px;
+}
+
+.section > .section_body > .thread_info {
+    width: calc(100% - 370px);
+}
+
+.section > .section_body > .thread_info > .thread_date {
+    font-size: 13px;
+}
+
+.section > .section_body > .thread_status {
+    margin-right: 10px; 
+    font-size: 12px; 
+    width: 15px;
+}
+
+.section > .section_body > .thread_viewed, 
+.section > .section_body > .thread_last_message {
+    width: 150px;
+    font-size: 13px;
+}
+
+.section > .section_body > .thread_viewed > .row > .parameter {
+    width: 70%;
+}
+
+.section > .section_body > .thread_viewed > .row > .value {
+    width: 30%;
+}
+
+/*new_thread.php*/
+#new_thread > #title {
+    border: 1px solid #929292;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 22px;
+}
+
+#new_thread > #title:empty::before {
+    content: attr(data-placeholder);
+    color: #929292;
+}
+
+#new_thread > #title:focus {
+    outline: none;
+}
+
+#new_thread > #body > #answer {
+    width: 100%;
+}
+
+/*register*/
+.register_element > div > .text {
+    padding: 5px;
+    border: 1px solid #da1e1e;
+    border-radius: 5px;
+    font: inherit;
+    background: unset;
+    width: 200px;
+    color: inherit;
+}
+
+.register_element > div > .text:focus {
+    outline: none;
+}
+
+#register_header,
+#register_body {
+    background: #383838;
+    padding: 10px;
+    border: 2px solid #da1e1e;
+    border-radius: 5px;	
+    margin-bottom: 10px;
+}
+
+#register_header {
+    font-size: 24px;
+}
+.register_element {
+    margin-bottom: 10px;
+}
+
+/*users*/
+#users {
+    border: 2px solid #da1e1e;
+    border-radius: 5px;
+    background: #383838;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#users > #users_body > #avatar > img {
+    width: 200px;
+    /*height: 200px;*/
+    border-radius: 5px;
+    border: 1px solid #929292;
+}
+
+#users > #users_body > #avatar {
+    margin-right: 10px;
+}
+
+#users_header {
+    border: 2px solid #da1e1e;
+    border-radius: 5px;
+    background: #383838;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 22px;
+}
+
+/*chat*/
+#chat {
+    height: 307px;
+    border: 2px solid #da1e1e;
+    margin-bottom: 10px;
+    background: #383838;
+}
+
+#chat_header {
+    padding: 15px;
+    font-size: 22px; 
+    border-bottom: 2px solid #da1e1e;
+    border-radius: unset;
+}
+
+#chat_box {
+    border-bottom: 2px solid #da1e1e;
+    height: 210px;
+    overflow-y: auto;
+    border-radius: unset;
+}
+
+#chat_text {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    font: inherit;
+    background: unset;
+    width: 200px;
+    color: inherit;
+    width: 100%;
+}
+
+#chat_text:focus {
+    outline: none;
+}
+
+.chat_message {
+    padding: 5px;
+}
+
+.chat_message_author {
+    margin-right: 5px;
+    margin-top: auto;
+}
+
+.chat_message_text {
+    width: 100%;
+}
+
+.chat_message_date {
+    margin: 0px 5px;
+    margin-top: auto;
+}
+
+.edit {
+    padding: 5px;
+    border: 1px solid #929292;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font: inherit;
+    background: #383838;
+    width: 200px;
+    color: inherit;
+    width: calc(100% - 12px);
+}
+
+.edit:focus {
+    outline: none;
+}
+
+.edit_buttons {
+    margin: 6px;
+    cursor: pointer;
+}

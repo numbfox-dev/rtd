@@ -1,0 +1,249 @@
+/*Спойлер*/
+.spoiler {
+    padding: 2px 8px;
+    width: max-content;
+    background: #929292;
+    color: white;
+    border-radius: 4px;
+    margin: 5px 0;
+}
+
+.spoiler:hover {
+    background: #929292;
+}
+
+.spoiler_title {
+    cursor: pointer;
+}
+
+.spoiler_content {
+    margin: 3px -7px -1px -7px;
+    display: none;
+    padding: 10px;
+    background: #eae7e4;
+    border-radius: 0px 0px 2px 2px;
+    color: black;
+}
+
+.spoiler_image {
+    width: 100%;
+}
+
+/*Цитата*/
+.quote {
+    background: #929292;
+    padding: 15px;
+    color: white;
+    max-width: max-content;
+    border: 1px solid #eae7e4;
+    border-left: 5px solid #eae7e4;
+    margin-bottom: 10px;
+}
+
+.quote_title {
+    margin-bottom: 5px;
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+.quote_body {
+
+}
+
+/* Стили для неактивного модального окна */
+.modal-wrapper {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.modal {
+    background: #383838;
+    border: 2px solid #da1e1e;
+    top: -50%;
+    width: 50%;
+    border-radius: 5px;
+    box-shadow: 0 3px 7px rgba(0,0,0,.25);
+    -moz-box-shadow: 0 3px 7px rgba(0,0,0,.25);
+    -webkit-box-shadow: 0 3px 7px rgba(0,0,0,.25);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: none;
+    pointer-events: all;
+}
+
+
+/* Активация модального окна в состоянии :target */
+.modal:target {
+    top: 50%;
+    transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    display: block;
+}
+
+.modal > header, .modal > footer {
+    background: #383838;
+}
+.modal > footer {
+    border: none;
+    text-align: right;
+}
+.modal > section, .modal > header, .modal > footer {
+    padding: 0 10px;
+    z-index: 200;
+    margin-bottom: 10px;
+}
+
+.modal > header > h2 {
+    margin: 0;
+}
+
+select {
+    padding: 5px;
+    border: 1px solid #da1e1e;
+    border-radius: 5px;
+    font: inherit;
+    background: unset;
+    width: 200px;
+    color: inherit;
+}
+
+select:focus {
+    outline: none;
+}
+
+option {
+    background: #383838;
+    border: 0px;
+}
+
+input[type="text"] {
+    padding: 5px;
+    border: 1px solid #da1e1e;
+    border-radius: 5px;
+    font: inherit;
+    background: unset;
+    width: 200px;
+    color: inherit;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+
+/*Стикеры в чате*/
+.fa-smile-o {
+    margin-top: 5px; 
+    margin-right: 5px; 
+    font-size: 23px!important; 
+    cursor: pointer;
+}
+
+#smile_box {
+    display: none; 
+    height: 128px; 
+    border-bottom: 2px solid #da1e1e; 
+    border-radius: 0; 
+    overflow-y: scroll;
+}
+
+.sticker {
+    height: 50px;
+    cursor: pointer;
+}
+
+.sticker_chat {
+    height: 64px;
+}
+
+
+/* Базовый контейнер табов */
+.tabs {
+    min-width: 320px;
+    max-width: 800px;
+    padding: 0px;
+    margin: 0 auto;
+}
+
+/* Стили секций с содержанием */
+.tabs>section {
+    display: none;
+    padding: 15px;
+    background: #383838;
+    border: 2px solid #da1e1e;
+    border-top: 1px solid #da1e1e;
+    color: #eae7e4;
+} 
+
+/* Прячем чекбоксы */
+.tabs>input {
+    display: none;
+    position: absolute;
+}
+
+/* Стили переключателей вкладок (табов) */
+.tabs>label {
+    display: inline-block;
+    margin: 0 0 -1px;
+    padding: 15px 25px;
+    font-weight: 600;
+    text-align: center;
+    color: #aaa;
+    border: 0px solid #ddd;
+    border-width: 1px 1px 1px 1px;
+    background: #f1f1f1;
+    border-radius: 3px 3px 0 0;
+}
+
+/* Шрифт-иконки от Font Awesome в формате Unicode */
+.tabs>label:before {
+    font-family: fontawesome;
+    font-weight: normal;
+    margin-right: 10px;
+}
+
+/* Изменения стиля переключателей вкладок при наведении */
+.tabs>label:hover {
+    color: #888;
+    cursor: pointer;
+}
+
+/* Стили для активной вкладки */
+.tabs>input:checked+label {
+    color: #eae7e4;
+    border: 2px solid #da1e1e;
+    border-bottom: 1px solid #383838;
+    background: #383838;
+}
+
+/* Активация секций с помощью псевдокласса :checked */
+#tab1:checked~#content-tab1, #tab2:checked~#content-tab2, #tab3:checked~#content-tab3, #tab4:checked~#content-tab4 {
+    display: block;
+}
+
+/* Убираем текст с переключателей и оставляем иконки на малых экранах */
+@media screen and (max-width: 680px) {
+    .tabs>label {
+        font-size: 0;
+    }
+    .tabs>label:before {
+        margin: 0;
+        font-size: 18px;
+    }
+}
+
+/* Изменяем внутренние отступы переключателей для малых экранов */
+@media screen and (max-width: 400px) {
+    .tabs>label {
+        padding: 15px;
+    }
+}

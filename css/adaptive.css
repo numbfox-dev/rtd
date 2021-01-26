@@ -1,0 +1,106 @@
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+@media only screen and (min-width: 813px) and (max-width: 1440px) {
+
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+
+}
+
+@media only screen and (min-width: 280px) and (max-width: 812px) {
+    body {
+        background: black;
+        width: 100%;
+    }
+
+    #right_sidebar, .breadcrumbs, #info, .category_body_info {
+        display: none!important;
+    }
+
+    #logo {
+        width: 100%!important;
+        margin: unset!important;;
+        font-size: unset!important;
+    }
+
+    #logo > a > img {
+        width: 100%;
+    }
+
+    #forum {
+        width: 100%;
+        margin: unset;
+    }
+
+    header {
+        margin: 0 0 10px 0;
+        padding: 5px;
+        border: 2px solid #da1e1e;
+        border-radius: 5px!important;
+    }
+
+    footer {
+        margin-top: auto;
+    }
+
+    .section > .section_body > .thread_info {
+        width: 100%;
+    }
+
+    .section > .section_body > .thread_viewed, 
+    .section > .section_body > .thread_last_message {
+        display: none;
+    }
+
+    #thread > #write_answer > #answer {
+        width: 100%!important;
+    }
+
+    #thread > #write_answer > #user {
+        display: none!important;
+    }
+
+    #thread > .thread_content {
+        flex-direction: column!important;
+    }
+    
+    #thread > .thread_content > .user {
+        margin-right: 0px;
+        margin-bottom: 0px;
+        border-bottom: 0px solid #da1e1e;
+        border-radius: 5px 5px 0 0;
+        width: calc(100% - 24px);
+    }
+    
+    #thread > .thread_content > .answer {
+        border-radius: 0 0 5px 5px;
+        width: calc(100% - 24px);
+    }
+    
+    #thread > .thread_content > .answer > .buttons > .button:first-child, 
+    #thread > .thread_content > .answer > .buttons > .button:nth-child(2), 
+    .thread_content > .answer > #answer > #buttons > .button:first-child, 
+    .thread_content > .answer > #answer > #buttons > .button:nth-child(2) {
+        margin-left: 8px;
+    } 
+    
+    nav {
+        display: none!important;
+    }
+    
+    nav[class="mobile"] {
+        display: block!important;
+    }
+    
+    #thread > .thread_content > .user, #thread > #write_answer > #user {
+        /*display: none!important;*/
+    }
+    
+    #mobile_menu {        
+        /*transition: 1s;
+        left: 0;*/
+    }
+}
