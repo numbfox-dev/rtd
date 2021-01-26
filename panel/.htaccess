@@ -1,0 +1,24 @@
+php_flag display_errors on
+AddDefaultCharset utf-8
+
+#Запрет на просмотр папок
+Options All -Indexes
+
+#Перенаправим все ошибки на index
+ErrorDocument 400 /index.php
+ErrorDocument 403 /index.php
+ErrorDocument 405 /index.php
+ErrorDocument 408 /index.php
+ErrorDocument 500 /index.php
+ErrorDocument 502 /index.php
+ErrorDocument 504 /index.php
+
+#Время жизни сессии = 1 год
+php_value session.gc_maxlifetime 31536000
+php_value session.cookie_lifetime 31536000
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule .* index.php [L]
