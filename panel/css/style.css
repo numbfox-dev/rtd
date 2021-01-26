@@ -1,0 +1,77 @@
+/******************************************************************************/
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub {
+    margin: 10px;
+}
+/******************************************************************************/
+#menu {
+    width: 10%;
+    min-height: 10px;
+}
+
+#content {
+    border: 1px solid black;
+    width: 90%;
+    margin-left: 10px;
+    min-height: 500px;
+    overflow: hidden;
+    height: calc(100vh - 18px);  
+}
+
+.menu_item {
+    border: 1px solid black;
+    margin-bottom: 1px;
+    word-wrap: break-word;
+    cursor: pointer;
+    padding: 2px;
+    color: black;
+    text-decoration: none;
+}
+
+.menu_item:hover {
+    background: #1ee25b;
+}
+
+#menu > #exit:hover {
+    background: red;
+}
+
+tr:nth-child(odd) { 
+    background-color: #F0F0F0; 
+}	
+
+tr:nth-child(even) { 
+    background-color: white; 
+}
+
+[data-title]:before {
+    top: -10px;
+    content: attr(data-title);
+    position: relative;
+    background: white;
+    padding: 0 5px;
+}
+
+[data-title] {
+    border: 1px solid black;
+    padding: 0 10px 10px 10px;
+    width: 177px;
+}
+
+select {
+    height: 21px;
+}
+
+input[type="text"], input[type="button"], select {
+    width: 173px;
+}
+/******************************************************************************/
